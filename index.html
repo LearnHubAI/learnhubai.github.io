@@ -1,0 +1,1039 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <title>LearnHub – AI-Augmented Learning Partner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="LearnHub is an AI-augmented learning hub with concise, AI-ready summaries for technical courses, YouTube videos, books, and mock interviews."
+  />
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      padding-top: 72px;
+    }
+
+    section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      scroll-margin-top: 80px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.25rem, 3vw, 3rem);
+      font-weight: 700;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      max-width: 680px;
+    }
+
+    .navbar-brand span {
+      font-weight: 600;
+    }
+
+    .badge-pill {
+      border-radius: 999px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    .resources-search {
+      max-width: 360px;
+    }
+
+    .resources-table-wrapper {
+      max-height: 520px;
+      overflow: auto;
+    }
+
+    .resources-table-wrapper table {
+      margin-bottom: 0;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+    }
+
+    .shadow-soft {
+      box-shadow:
+        0 18px 45px rgba(15, 23, 42, 0.25),
+        0 4px 12px rgba(15, 23, 42, 0.12);
+    }
+
+    .navbar-blur {
+      backdrop-filter: blur(10px);
+      background-color: rgba(248, 249, 250, 0.85);
+    }
+
+    [data-bs-theme="dark"] .navbar-blur {
+      background-color: rgba(15, 23, 42, 0.9);
+      border-bottom-color: rgba(148, 163, 184, 0.3);
+    }
+
+    [data-bs-theme="dark"] .bg-light {
+      background-color: #020617 !important;
+    }
+
+    [data-bs-theme="dark"] .card-header {
+      background-color: rgba(15, 23, 42, 0.9);
+    }
+
+    [data-bs-theme="dark"] .table > :not(caption) > * > * {
+      background-color: inherit !important;
+    }
+
+    [data-bs-theme="dark"] .table-light {
+      --bs-table-bg: #101018;
+      color: var(--bs-body-color);
+    }
+
+    [data-bs-theme="dark"] .table-striped > tbody > tr:nth-of-type(odd) > * {
+      --bs-table-accent-bg: rgba(255, 255, 255, 0.03);
+      color: inherit;
+    }
+
+    .hero-search-wrapper {
+      max-width: 640px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    .hero-search .form-control {
+      padding-top: 0.9rem;
+      padding-bottom: 0.9rem;
+      font-size: 1.05rem;
+    }
+
+    .hero-search .input-group-text {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 576px) {
+      .hero-search-wrapper {
+        max-width: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top shadow-sm navbar-blur">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <span class="fs-5">LearnHub</span>
+        <span class="badge text-bg-primary badge-pill text-xs">AI-augmented</span>
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarMain"
+        aria-controls="navbarMain"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#ai-study-plan">AI Study Plan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#ai-search">AI Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#resources">Resources</a>
+          </li>
+        </ul>
+
+        <button
+          id="theme-toggle"
+          type="button"
+          class="btn btn-outline-secondary btn-sm ms-lg-3 mt-2 mt-lg-0"
+        >
+          🌙 Dark
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Intro -->
+    <section id="intro">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-7">
+            <h1 class="hero-title mb-3">
+              LearnHub – Your AI-Augmented Learning Partner
+            </h1>
+            <p class="hero-subtitle text-muted mb-3">
+              LearnHub is a curated collection of high-signal summaries for
+              courses, YouTube videos, books, and mock interviews. It is
+              designed to help busy engineers, students, and career switchers
+              learn faster, review smarter, and plug AI directly into
+              their study workflow.
+            </p>
+            <div class="hero-search-wrapper mb-4">
+              <form id="hero-search-form" class="hero-search-form">
+                <div class="input-group input-group-lg hero-search">
+                  <span class="input-group-text">🔍</span>
+                  <input
+                    type="search"
+                    id="hero-resource-search"
+                    class="form-control"
+                    placeholder="Search anything you want to learn…"
+                    autocomplete="off"
+                  />
+                </div>
+                <p class="small text-muted mt-2 mb-0">
+                  This search instantly filters the LearnHub library below.
+                </p>
+              </form>
+            </div>
+            <ul class="text-muted mb-4">
+              <li>Use concise summaries instead of rewatching hours of content.</li>
+              <li>Let your favourite AI assistant turn them into plans, drills, and mindmaps.</li>
+              <li>Work in your preferred natural language and programming language.</li>
+            </ul>
+            <div class="d-flex flex-wrap gap-2">
+              <a
+                href="#ai-study-plan"
+                class="btn btn-primary"
+              >
+                Start with AI Study Plan
+              </a>
+              <a
+                href="#ai-search"
+                class="btn btn-outline-secondary"
+              >
+                Explore AI Search
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="border rounded-4 p-3 p-md-4 bg-light">
+              <h2 class="h5 mb-3">Who is this for?</h2>
+              <ul class="mb-3 small text-muted">
+                <li>Backend and full-stack developers preparing for interviews.</li>
+                <li>Engineers taking online courses and wanting better retention.</li>
+                <li>Self-taught learners who prefer structured, AI-friendly notes.</li>
+              </ul>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="summary-count-badge badge text-bg-secondary badge-pill">+.&nbsp;.&nbsp;.&nbsp; summaries</span>
+                <span class="badge text-bg-secondary badge-pill">AI-ready prompts</span>
+                <span class="badge text-bg-secondary badge-pill">Multi-language</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Study Plan -->
+    <section id="ai-study-plan" class="bg-light">
+      <div class="container">
+        <div class="row gy-4 align-items-start">
+          <div class="col-lg-7">
+            <div class="card shadow-sm border-0 h-100">
+              <div class="card-header border-0 pb-1">
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+                  <div>
+                    <h2 class="h5 mb-1">AI Study Plan</h2>
+                    <p class="text-muted small mb-0">
+                      Use your favourite AI assistant to build a personalised study plan from LearnHub resources.
+                    </p>
+                  </div>
+                  <span class="badge text-bg-primary badge-pill text-xs">
+                    Step 1: Starter prompt
+                  </span>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="small text-muted">
+                  Use this starter prompt in any capable AI assistant (ChatGPT, Claude, Gemini, local models, etc.).
+                  Replace the placeholders with your details and let the AI recommend resources and build a plan around them.
+                </p>
+
+                <div class="mb-3">
+                  <label for="starter-prompt" class="form-label small text-muted">Copy-paste into your AI assistant</label>
+                  <textarea
+                    id="starter-prompt"
+                    class="form-control"
+                    rows="11"
+                    readonly
+                  >You are an AI learning coach helping me use a curated library called "LearnHub".
+
+LearnHub is a collection of high-signal summaries for courses, YouTube videos, books, and mock interviews, mainly focused on software engineering, backend development, distributed systems, system design, devops, and related topics.
+
+I will tell you:
+- my current background,
+- my target role or exam,
+- how much time I can study per week,
+- and my preferred learning style.
+
+Your job:
+1) Ask a few clarifying questions if needed.
+2) Propose a learning plan that:
+   - Uses LearnHub summaries as the backbone,
+   - Organises topics into weekly or daily blocks,
+   - Mixes theory, practice, and spaced review,
+   - And suggests where it might be useful to call the AI again (for drills, flashcards, explanations, code reviews, etc.).
+3) Whenever possible, explicitly mention which kind of LearnHub resources I should search for by title or category (e.g. "system design interview", "Redis", "DDD", "clean architecture", "CS fundamentals", etc.).
+
+Important:
+- I may not have access to all original materials behind the summaries (full courses, premium content, etc.). Treat the summaries as the primary learning artifact.
+- Keep the plan realistic for my schedule and focus on depth over breadth.
+
+First, briefly introduce yourself as my learning coach and then ask me for:
+- my background,
+- my goals,
+- my time budget,
+- my preferred language (e.g. English, Persian, etc.),
+- and any constraints (deadlines, weak areas, etc.).</textarea>
+                </div>
+
+                <div class="d-flex flex-wrap gap-2">
+                  <button
+                    id="copy-starter"
+                    class="btn btn-outline-primary btn-sm"
+                    type="button"
+                  >
+                    Copy starter prompt
+                  </button>
+                  <span id="copy-starter-status" class="small text-muted"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="card shadow-sm border-0 mb-4">
+              <div class="card-header border-0 pb-1">
+                <h3 class="h6 mb-1">How to use the starter prompt</h3>
+                <p class="text-muted small mb-0">
+                  This prompt does not read your CV or automatically detect your skill gaps. Instead, it helps the AI organise LearnHub resources around your goals.
+                </p>
+              </div>
+              <div class="card-body small text-muted">
+                <ol class="mb-3">
+                  <li>Open your AI assistant of choice.</li>
+                  <li>Paste the starter prompt.</li>
+                  <li>Answer the questions about your background and goals.</li>
+                  <li>When the AI suggests topics, search for matching resources in the LearnHub library below.</li>
+                  <li>Use the resource-specific AI buttons (plan, drills, etc.) as you go.</li>
+                </ol>
+                <p class="mb-0">
+                  The AI is a helper. The LearnHub library is the core of your learning workflow.
+                </p>
+              </div>
+            </div>
+
+            <div class="card shadow-sm border-0">
+              <div class="card-header border-0 pb-1">
+                <h3 class="h6 mb-1">Quick language shortcuts</h3>
+                <p class="small text-muted mb-0">
+                  Use these links to open your preferred AI assistant with the starter prompt in a specific language.
+                </p>
+              </div>
+              <div class="card-body small text-muted">
+                <h3 class="h6 text-uppercase text-muted mb-2">English (default)</h3>
+                <p class="mb-1">
+                  If your AI assistant is already set to English, simply copy the prompt above.
+                </p>
+
+                <h3 class="h6 text-uppercase text-muted mb-2 mt-3">Other languages</h3>
+                <p class="small mb-1">
+                  Use the same entry point with a language shortcut:
+                </p>
+                <div class="d-flex flex-wrap gap-2 small">
+                  <a href="https://alisol.ir/?ai=learnhub_starter|NL...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">NL</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|DE...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">DE</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|FR...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">FR</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|ES...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">ES</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|IT...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">IT</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|SV...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">SV</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|DA...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">DA</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|NO...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">NO</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|PL...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">PL</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|PT...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">PT</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|RO...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">RO</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|RU...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">RU</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|HI...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">HI</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|AR...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">AR</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|FA...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">FA</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|TR...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">TR</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Search -->
+    <section id="ai-search">
+      <div class="container">
+        <div class="row gy-4 align-items-start">
+          <div class="col-lg-7">
+            <div class="card shadow-sm border-0 h-100">
+              <div class="card-header border-0 pb-1">
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+                  <div>
+                    <h2 class="h5 mb-1">AI Search over LearnHub</h2>
+                    <p class="text-muted small mb-0">
+                      Use natural language queries to ask an AI assistant to search LearnHub resources for you.
+                    </p>
+                  </div>
+                  <span class="badge text-bg-secondary badge-pill text-xs">
+                    Optional AI helper
+                  </span>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="small text-muted">
+                  This prompt turns your AI assistant into a semantic search layer over LearnHub.
+                  It does not replace the library; it helps you discover relevant summaries faster.
+                </p>
+
+                <div class="mb-3">
+                  <label for="search-prompt" class="form-label small text-muted">Copy-paste into your AI assistant</label>
+                  <textarea
+                    id="search-prompt"
+                    class="form-control"
+                    rows="10"
+                    readonly
+                  >You are an AI search assistant for a curated learning library called "LearnHub".
+
+LearnHub contains concise, high-signal summaries of technical content (courses, YouTube videos, books, mock interviews), especially for:
+- backend engineering,
+- system design,
+- distributed systems,
+- data-intensive applications,
+- devops and SRE,
+- CS fundamentals,
+- and related topics.
+
+Your job:
+1) Help me search for relevant LearnHub resources using natural language queries.
+2) When I ask for something (e.g. "system design for senior backend interviews", "Redis patterns", "DDD aggregates", "Kubernetes fundamentals"), you will:
+   - Suggest specific LearnHub resource titles or categories that likely exist in the library,
+   - Show me how to search them by title or keywords,
+   - Optionally propose how to combine multiple resources into a learning path.
+
+Important:
+- You do not have direct access to the LearnHub index. Instead, think in terms of keywords and titles I can use in the LearnHub search box.
+- Keep your answers concise and focused on mapping my query to potential LearnHub resources.
+
+When I type a query, first restate it briefly, then suggest:
+- at least 3–7 candidate resource titles or topics to search for,
+- and how they could fit into my learning or interview prep.</textarea>
+                </div>
+
+                <div class="d-flex flex-wrap gap-2">
+                  <button
+                    id="copy-search"
+                    class="btn btn-outline-primary btn-sm"
+                    type="button"
+                  >
+                    Copy search prompt
+                  </button>
+                  <span id="copy-search-status" class="small text-muted"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="card shadow-sm border-0 mb-4">
+              <div class="card-header border-0 pb-1">
+                <h3 class="h6 mb-1">Typical workflow</h3>
+                <p class="text-muted small mb-0">
+                  Combine AI search with the LearnHub table below.
+                </p>
+              </div>
+              <div class="card-body small text-muted">
+                <ol class="mb-3">
+                  <li>Open your AI assistant and paste the search prompt.</li>
+                  <li>Describe what you are preparing for (e.g. "senior backend interview", "Kubernetes for production").</li>
+                  <li>Ask the AI to suggest relevant LearnHub topics and exact phrases to search for.</li>
+                  <li>Use the LearnHub search box (below) to filter resources by those phrases.</li>
+                  <li>Open the summaries that match and use the in-resource prompts to go deeper.</li>
+                </ol>
+                <p class="mb-0">
+                  Once you have a set of good resources, switch back to the AI Study Plan prompt to organise them.
+                </p>
+              </div>
+            </div>
+
+            <div class="card shadow-sm border-0">
+              <div class="card-header border-0 pb-1">
+                <h3 class="h6 mb-1">Language shortcuts for AI search</h3>
+                <p class="small text-muted mb-0">
+                  Open your AI assistant preloaded with the search prompt in other languages.
+                </p>
+              </div>
+              <div class="card-body small text-muted">
+                <div class="d-flex flex-wrap gap-2 small">
+                  <a href="https://alisol.ir/?ai=learnhub_search|NL...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">NL</a>
+                  <a href="https://alisol.ir/?ai=learnhub_search|DE...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">DE</a>
+                  <a href="https://alisol.ir/?ai=learnhub_search|FR...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">FR</a>
+                  <a href="https://alisol.ir/?ai=learnhub_search|ES...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">ES</a>
+                  <a href="https://alisol.ir/?ai=learnhub_search|IT...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">IT</a>
+                  <a href="https://alisol.ir/?ai=learnhub_search|SV...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">SV</a>
+                  <a href="https://alisol.ir/?ai=learnhub_search|DA...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">DA</a>
+                  <a href="https://alisol.ir/?ai=learnhub_search|NO...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">NO</a>
+                  <a href="https://alisol.ir/?ai=learnhub_search|PL...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">PL</a>
+                  <a href="https://alisol.ir/?ai=learnhub_search|PT...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">PT</a>
+                  <a href="https://alisol.ir/?ai=learnhub_search|RO...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">RO</a>
+                  <a href="https://alisol.ir/?ai=learnhub_search|RU...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">RU</a>
+                  <a href="https://alisol.ir/?ai=learnhub_search|HI...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">HI</a>
+                  <a href="https://alisol.ir/?ai=learnhub_search|AR...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">AR</a>
+                  <a href="https://alisol.ir/?ai=learnhub_search|FA...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">FA</a>
+                  <a href="https://alisol.ir/?ai=learnhub_search|TR...ner" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">TR</a>
+                </div>
+
+                <hr>
+
+                <p class="small mb-1">
+                  Example queries you can send to the AI:
+                </p>
+                <ul class="small text-muted mb-0">
+                  <li>
+                    “I am a mid-level backend engineer preparing for system design interviews targeting
+                    FAANG-level companies. Suggest which system design resources from LearnHub to start with.”
+                  </li>
+                  <li>
+                    “I want to strengthen my understanding of distributed systems:
+                    replication, sharding, consensus, CAP theorem. Which topics and LearnHub summaries should I search for?”
+                  </li>
+                  <li>
+                    “Recommend a path to learn Kubernetes for production workloads based on LearnHub, including practical examples in PHP.”
+                  </li>
+                  <li>
+                    “Find resources related to consistency models from
+                    Designing Data-Intensive Applications.”
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources -->
+    <section id="resources" class="bg-light">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+          <div>
+            <h2 class="mb-2">Resources <small>(<span class="summary-count-badge">...</span>)</small></h2>
+            <p class="text-muted mb-0">
+              Browse LearnHub summaries by type and title. Use the search box
+              to instantly filter by title (server-side).
+            </p>
+          </div>
+          <div class="resources-search">
+            <label for="resource-search" class="form-label mb-1 small text-muted">
+              Instant search (title only)
+            </label>
+            <input
+              type="text"
+              id="resource-search"
+              class="form-control form-control-sm"
+              placeholder="Search by title..."
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div class="resources-table-wrapper table-responsive">
+          <table class="table table-sm table-striped table-hover align-middle" id="resources-table">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col" style="width: 60px;">#</th>
+                <th scope="col" style="width: 120px;">Type</th>
+                <th scope="col">Title</th>
+                <th scope="col" style="width: 160px;">Langs</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Filled by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mt-3 gap-2">
+          <div class="d-flex align-items-center gap-2">
+            <label for="per-page" class="small text-muted mb-0">Rows per page</label>
+            <select id="per-page" class="form-select form-select-sm" style="width: auto;">
+              <option value="10" selected>10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+            </select>
+          </div>
+
+          <div class="d-flex align-items-center gap-2">
+            <button
+              id="page-prev"
+              type="button"
+              class="btn btn-outline-secondary btn-sm"
+            >
+              ◀ Prev
+            </button>
+            <span id="pagination-info" class="small text-muted">Loading...</span>
+            <button
+              id="page-next"
+              type="button"
+              class="btn btn-outline-secondary btn-sm"
+            >
+              Next ▶
+            </button>
+          </div>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <h3 class="h6 mb-2">How the resources work</h3>
+            <p class="small text-muted mb-2">
+              Each resource is a concise, AI-ready summary of a longer piece of content:
+              a YouTube video, a playlist, a course, a book, or a mock interview.
+            </p>
+            <ul class="small text-muted mb-2">
+              <li>Click a title to open the summary on GitHub.</li>
+              <li>Inside each summary, you will find AI prompts tailored to that resource.</li>
+              <li>You can ask your AI assistant to quiz you, create flashcards, generate code drills, and more.</li>
+            </ul>
+            <p class="small text-muted mb-0">
+              You can return to the same resource as many times as you like. LearnHub is designed for repeated review and deeper passes.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="h6 mb-2">Tips for using LearnHub efficiently</h3>
+            <ul class="small text-muted mb-2">
+              <li>Start with a small set of core topics (e.g. networking, databases, system design).</li>
+              <li>Alternate between new content and review sessions using the same summaries.</li>
+              <li>Use the AI Study Plan prompt when you feel lost or overwhelmed.</li>
+              <li>Use the AI Search prompt when you want to discover related resources quickly.</li>
+            </ul>
+            <p class="small text-muted mb-0">
+              Over time, you can build your own mental map of the LearnHub library and reuse it for different goals
+              (interviews, promotions, switching stacks, etc.).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-top py-3">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <div class="small text-muted">
+        Built by <a href="https://alisol.ir" target="_blank" rel="noopener">Ali Sol</a>. Summaries hosted on GitHub.
+      </div>
+      <div class="small text-muted">
+        <a href="#intro" class="text-decoration-none">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+
+  <script>
+    (function () {
+      var toggleButton = document.getElementById("theme-toggle");
+      var storedTheme = localStorage.getItem("learnhub-theme");
+
+      function setTheme(theme) {
+        document.documentElement.setAttribute("data-bs-theme", theme);
+        localStorage.setItem("learnhub-theme", theme);
+        if (toggleButton) {
+          toggleButton.textContent = theme === "dark" ? "🌙 Dark" : "☀️ Light";
+        }
+      }
+
+      if (!storedTheme) {
+        var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        setTheme(prefersDark ? "dark" : "light");
+      } else {
+        setTheme(storedTheme);
+      }
+
+      if (!toggleButton) return;
+
+      toggleButton.addEventListener("click", function () {
+        var current = document.documentElement.getAttribute("data-bs-theme") || "dark";
+        var next = current === "dark" ? "light" : "dark";
+        setTheme(next);
+      });
+    })();
+
+    (function () {
+      var copyStarterBtn = document.getElementById("copy-starter");
+      var copyStarterStatus = document.getElementById("copy-starter-status");
+      var starterTextarea = document.getElementById("starter-prompt");
+
+      if (!copyStarterBtn || !copyStarterStatus || !starterTextarea) return;
+
+      copyStarterBtn.addEventListener("click", function () {
+        var text = starterTextarea.value || "";
+        if (!navigator.clipboard) {
+          starterTextarea.select();
+          var ok = false;
+          try {
+            ok = document.execCommand("copy");
+          } catch (e) {
+            ok = false;
+          }
+          copyStarterStatus.textContent = ok ? "Copied." : "Copy failed.";
+          return;
+        }
+
+        navigator.clipboard
+          .writeText(text)
+          .then(function () {
+            copyStarterStatus.textContent = "Copied.";
+          })
+          .catch(function () {
+            copyStarterStatus.textContent = "Copy failed.";
+          });
+
+        setTimeout(function () {
+          copyStarterStatus.textContent = "";
+        }, 2000);
+      });
+    })();
+
+    (function () {
+      var copySearchBtn = document.getElementById("copy-search");
+      var copySearchStatus = document.getElementById("copy-search-status");
+      var searchTextarea = document.getElementById("search-prompt");
+
+      if (!copySearchBtn || !copySearchStatus || !searchTextarea) return;
+
+      copySearchBtn.addEventListener("click", function () {
+        var text = searchTextarea.value || "";
+        if (!navigator.clipboard) {
+          searchTextarea.select();
+          var ok = false;
+          try {
+            ok = document.execCommand("copy");
+          } catch (e) {
+            ok = false;
+          }
+          copySearchStatus.textContent = ok ? "Copied." : "Copy failed.";
+          return;
+        }
+
+        navigator.clipboard
+          .writeText(text)
+          .then(function () {
+            copySearchStatus.textContent = "Copied.";
+          })
+          .catch(function () {
+            copySearchStatus.textContent = "Copy failed.";
+          });
+
+        setTimeout(function () {
+          copySearchStatus.textContent = "";
+        }, 2000);
+      });
+    })();
+
+     // Summary count badge
+    (function () {
+      var badges = document.querySelectorAll(".summary-count-badge");
+      if (!badges.length) return;
+    
+      fetch("https://alisol.ir/Projects/LearnHub/api/v1/summaries/count/")
+        .then(function (res) {
+          if (!res.ok) {
+            throw new Error("Request failed");
+          }
+          return res.json();
+        })
+        .then(function (json) {
+          var approx =
+            json &&
+            json.data &&
+            json.data.total &&
+            typeof json.data.total.approximate === "number"
+              ? json.data.total.approximate
+              : null;
+    
+          if (approx !== null) {
+            badges.forEach(function (badge) {
+              badge.textContent = "+" + approx + " summaries";
+            });
+          }
+        })
+        .catch(function () {
+          badges.forEach(function (badge) {
+            badge.textContent = "LearnHub summaries";
+          });
+        });
+    })();
+
+  </script>
+
+  <script>
+    // Resources table with server-side pagination + search
+    (function () {
+      var tableBody = document.querySelector("#resources-table tbody");
+      var searchInput = document.getElementById("resource-search");
+      var perPageSelect = document.getElementById("per-page");
+      var pagePrevBtn = document.getElementById("page-prev");
+      var pageNextBtn = document.getElementById("page-next");
+      var paginationInfo = document.getElementById("pagination-info");
+
+      if (!tableBody || !searchInput || !perPageSelect || !pagePrevBtn || !pageNextBtn || !paginationInfo) {
+        return;
+      }
+
+      var currentPage = 1;
+      var perPage = parseInt(perPageSelect.value, 10) || 10;
+      var totalItems = 0;
+      var currentSearch = "";
+      var isLoading = false;
+      var hasLoadedOnce = false;
+      var needsReload = false;
+      var searchDebounceTimer = null;
+
+      var heroSearchInput = document.getElementById("hero-resource-search");
+      var heroSearchForm = document.getElementById("hero-search-form");
+      var resourcesSection = document.getElementById("resources");
+
+      function transformResourceUrl(url) {
+        return "https://github.com/alisolphp/LearnHub/blob/main/" + url;
+      }
+
+      function renderRows(items) {
+        if (!items || !items.length) {
+          tableBody.innerHTML =
+            '<tr><td colspan="4" class="text-center py-4 text-muted">No resources found.</td></tr>';
+          return;
+        }
+
+        var rows = items
+          .map(function (item, index) {
+            var absoluteIndex = (currentPage - 1) * perPage + index + 1;
+            var langs = item.langs || {};
+            var langKeys = Object.keys(langs).sort();
+            var firstLangUrl = null;
+
+            if (langKeys.length > 0) {
+              var enKey = langKeys.indexOf("EN") !== -1 ? "EN" : langKeys[0];
+              firstLangUrl = transformResourceUrl(langs[enKey]);
+            }
+
+            var titleLink = firstLangUrl || "#";
+
+            var langLinks = langKeys
+              .map(function (code) {
+                var url = transformResourceUrl(langs[code]);
+                return (
+                  '<a href="' +
+                  url +
+                  '" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none me-1 mb-1">' +
+                  code +
+                  "</a>"
+                );
+              })
+              .join("");
+
+            return (
+              "<tr>" +
+              '<td class="text-muted small">' +
+              absoluteIndex +
+              "</td>" +
+              "<td>" +
+              (item.type || "") +
+              "</td>" +
+              '<td><a href="' +
+              titleLink +
+              '" target="_blank" rel="noopener">' +
+              (item.title || "") +
+              "</a></td>" +
+              "<td>" +
+              langLinks +
+              "</td>" +
+              "</tr>"
+            );
+          })
+          .join("");
+
+        tableBody.innerHTML = rows;
+      }
+
+      function updatePaginationInfo() {
+        if (!paginationInfo) return;
+
+        if (!totalItems) {
+          paginationInfo.textContent = "0 items";
+          pagePrevBtn.disabled = true;
+          pageNextBtn.disabled = true;
+          return;
+        }
+
+        var startItem = (currentPage - 1) * perPage + 1;
+        var endItem = Math.min(currentPage * perPage, totalItems);
+        var totalPages = Math.ceil(totalItems / perPage);
+
+        paginationInfo.textContent =
+          "Showing " + startItem + "–" + endItem + " of " + totalItems + " (page " + currentPage + " of " + totalPages + ")";
+
+        pagePrevBtn.disabled = currentPage <= 1;
+        pageNextBtn.disabled = currentPage >= totalPages;
+      }
+
+      function loadResources() {
+        if (isLoading) {
+          needsReload = true;
+          return;
+        }
+        isLoading = true;
+        needsReload = false;
+
+        if (!hasLoadedOnce) {
+          tableBody.innerHTML =
+            '<tr><td colspan="4" class="text-center py-4 text-muted">Loading resources...</td></tr>';
+        }
+
+        var params = new URLSearchParams();
+        params.set("page", String(currentPage));
+        params.set("per_page", String(perPage));
+        if (currentSearch) {
+          params.set("search", currentSearch);
+        }
+
+        fetch("https://alisol.ir/Projects/LearnHub/api/v1/summaries/list/?" + params.toString())
+          .then(function (res) {
+            if (!res.ok) {
+              throw new Error("Request failed");
+            }
+            return res.json();
+          })
+          .then(function (json) {
+            var data = json && json.data ? json.data : {};
+            var items = Array.isArray(data.items) ? data.items : [];
+            totalItems = typeof data.total === "number" ? data.total : items.length;
+            renderRows(items);
+            updatePaginationInfo();
+          })
+          .catch(function () {
+            tableBody.innerHTML =
+              '<tr><td colspan="4" class="text-center py-4 text-danger">Failed to load resources.</td></tr>';
+            paginationInfo.textContent = "";
+          })
+          .finally(function () {
+            isLoading = false;
+            hasLoadedOnce = true;
+            if (needsReload) {
+              loadResources();
+            }
+          });
+      }
+
+      function applySearch(value) {
+        var normalized = String(value || "").trim();
+        currentSearch = normalized;
+        currentPage = 1;
+
+        if (searchInput && searchInput.value !== normalized) {
+          searchInput.value = normalized;
+        }
+
+        if (heroSearchInput && heroSearchInput.value !== normalized) {
+          heroSearchInput.value = normalized;
+        }
+
+        if (searchDebounceTimer) {
+          clearTimeout(searchDebounceTimer);
+        }
+
+        searchDebounceTimer = setTimeout(function () {
+          loadResources();
+        }, 500);
+      }
+
+      searchInput.addEventListener("input", function (event) {
+        applySearch(event.target.value);
+      });
+
+      searchInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          if (searchDebounceTimer) {
+            clearTimeout(searchDebounceTimer);
+          }
+          applySearch(searchInput.value);
+        }
+      });
+
+      if (heroSearchInput) {
+        heroSearchInput.addEventListener("input", function (event) {
+          applySearch(event.target.value);
+        });
+      }
+
+      if (heroSearchForm && heroSearchInput) {
+        heroSearchForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          applySearch(heroSearchInput.value);
+          if (resourcesSection) {
+            resourcesSection.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      }
+
+      perPageSelect.addEventListener("change", function (event) {
+        var value = parseInt(event.target.value, 10);
+        if (!value || value <= 0) return;
+        perPage = value;
+        currentPage = 1;
+        loadResources();
+      });
+
+      pagePrevBtn.addEventListener("click", function () {
+        if (currentPage <= 1) return;
+        currentPage -= 1;
+        loadResources();
+      });
+
+      pageNextBtn.addEventListener("click", function () {
+        var totalPages = totalItems > 0 ? Math.ceil(totalItems / perPage) : 1;
+        if (currentPage >= totalPages) return;
+        currentPage += 1;
+        loadResources();
+      });
+
+      loadResources();
+    })();
+  </script>
+
+</body>
+</html>
