@@ -158,9 +158,6 @@
             <a class="nav-link" href="#ai-study-plan">AI Study Plan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#ai-search">AI Search</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="#resources">Resources</a>
           </li>
         </ul>
@@ -186,11 +183,7 @@
               LearnHub – Your AI-Augmented Learning Partner
             </h1>
             <p class="hero-subtitle text-muted mb-3">
-              LearnHub is a curated collection of high-signal summaries for
-              courses, YouTube videos, books, and mock interviews. It is
-              designed to help busy engineers, students, and career switchers
-              learn faster, review smarter, and plug AI directly into
-              their study workflow.
+              LearnHub is a curated collection of high-signal summaries for courses, YouTube videos, books, and mock interviews. It is designed to help busy engineers, students, and career switchers learn faster, review smarter, and plug AI directly into their study workflow. If you don’t know which tutorial to read, let AI tell you (study plan).
             </p>
             <div class="hero-search-wrapper mb-4">
               <form id="hero-search-form" class="hero-search-form">
@@ -221,12 +214,6 @@
               >
                 Start with AI Study Plan
               </a>
-              <a
-                href="#ai-search"
-                class="btn btn-outline-secondary"
-              >
-                Explore AI Search
-              </a>
             </div>
           </div>
           <div class="col-lg-5">
@@ -241,298 +228,6 @@
                 <span class="summary-count-badge badge text-bg-secondary badge-pill">+.&nbsp;.&nbsp;.&nbsp; summaries</span>
                 <span class="badge text-bg-secondary badge-pill">AI-ready prompts</span>
                 <span class="badge text-bg-secondary badge-pill">Multi-language</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- AI Study Plan -->
-    <section id="ai-study-plan" class="bg-light">
-      <div class="container">
-        <div class="row gy-4 align-items-start">
-          <div class="col-lg-7">
-            <div class="card shadow-sm border-0 h-100">
-              <div class="card-header border-0 pb-1">
-                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
-                  <div>
-                    <h2 class="h5 mb-1">AI Study Plan</h2>
-                    <p class="text-muted small mb-0">
-                      Use your favourite AI assistant to build a personalised study plan from LearnHub resources.
-                    </p>
-                  </div>
-                  <span class="badge text-bg-primary badge-pill text-xs">
-                    Step 1: Starter prompt
-                  </span>
-                </div>
-              </div>
-              <div class="card-body">
-                <p class="small text-muted">
-                  Use this starter prompt in any capable AI assistant (ChatGPT, Claude, Gemini, local models, etc.).
-                  Replace the placeholders with your details and let the AI recommend resources and build a plan around them.
-                </p>
-
-                <div class="mb-3">
-                  <label for="starter-prompt" class="form-label small text-muted">Copy-paste into your AI assistant</label>
-                  <textarea
-                    id="starter-prompt"
-                    class="form-control"
-                    rows="11"
-                    readonly
-                  >You are an AI learning coach helping me use a curated library called "LearnHub".
-
-LearnHub is a collection of high-signal summaries for courses, YouTube videos, books, and mock interviews, mainly focused on software engineering, backend development, distributed systems, system design, devops, and related topics.
-
-I will tell you:
-- my current background,
-- my target role or exam,
-- how much time I can study per week,
-- and my preferred learning style.
-
-Your job:
-1) Ask a few clarifying questions if needed.
-2) Propose a learning plan that:
-   - Uses LearnHub summaries as the backbone,
-   - Organises topics into weekly or daily blocks,
-   - Mixes theory, practice, and spaced review,
-   - And suggests where it might be useful to call the AI again (for drills, flashcards, explanations, code reviews, etc.).
-3) Whenever possible, explicitly mention which kind of LearnHub resources I should search for by title or category (e.g. "system design interview", "Redis", "DDD", "clean architecture", "CS fundamentals", etc.).
-
-Important:
-- I may not have access to all original materials behind the summaries (full courses, premium content, etc.). Treat the summaries as the primary learning artifact.
-- Keep the plan realistic for my schedule and focus on depth over breadth.
-
-First, briefly introduce yourself as my learning coach and then ask me for:
-- my background,
-- my goals,
-- my time budget,
-- my preferred language (e.g. English, Persian, etc.),
-- and any constraints (deadlines, weak areas, etc.).</textarea>
-                </div>
-
-                <div class="d-flex flex-wrap gap-2">
-                  <button
-                    id="copy-starter"
-                    class="btn btn-outline-primary btn-sm"
-                    type="button"
-                  >
-                    Copy starter prompt
-                  </button>
-                  <span id="copy-starter-status" class="small text-muted"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-5">
-            <div class="card shadow-sm border-0 mb-4">
-              <div class="card-header border-0 pb-1">
-                <h3 class="h6 mb-1">How to use the starter prompt</h3>
-                <p class="text-muted small mb-0">
-                  This prompt does not read your CV or automatically detect your skill gaps. Instead, it helps the AI organise LearnHub resources around your goals.
-                </p>
-              </div>
-              <div class="card-body small text-muted">
-                <ol class="mb-3">
-                  <li>Open your AI assistant of choice.</li>
-                  <li>Paste the starter prompt.</li>
-                  <li>Answer the questions about your background and goals.</li>
-                  <li>When the AI suggests topics, search for matching resources in the LearnHub library below.</li>
-                  <li>Use the resource-specific AI buttons (plan, drills, etc.) as you go.</li>
-                </ol>
-                <p class="mb-0">
-                  The AI is a helper. The LearnHub library is the core of your learning workflow.
-                </p>
-              </div>
-            </div>
-
-            <div class="card shadow-sm border-0">
-              <div class="card-header border-0 pb-1">
-                <h3 class="h6 mb-1">Quick language shortcuts</h3>
-                <p class="small text-muted mb-0">
-                  Use these links to open your preferred AI assistant with the starter prompt in a specific language.
-                </p>
-              </div>
-              <div class="card-body small text-muted">
-                <h3 class="h6 text-uppercase text-muted mb-2">English (default)</h3>
-                <p class="mb-1">
-                  If your AI assistant is already set to English, simply copy the prompt above.
-                </p>
-
-                <h3 class="h6 text-uppercase text-muted mb-2 mt-3">Other languages</h3>
-                <p class="small mb-1">
-                  Use the same entry point with a language shortcut:
-                </p>
-                <div class="d-flex flex-wrap gap-2 small">
-                  <a href="https://alisol.ir/?ai=learnhub_starter|NL" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">NL</a>
-                  <a href="https://alisol.ir/?ai=learnhub_starter|DE" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">DE</a>
-                  <a href="https://alisol.ir/?ai=learnhub_starter|FR" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">FR</a>
-                  <a href="https://alisol.ir/?ai=learnhub_starter|ES" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">ES</a>
-                  <a href="https://alisol.ir/?ai=learnhub_starter|IT" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">IT</a>
-                  <a href="https://alisol.ir/?ai=learnhub_starter|SV" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">SV</a>
-                  <a href="https://alisol.ir/?ai=learnhub_starter|DA" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">DA</a>
-                  <a href="https://alisol.ir/?ai=learnhub_starter|NO" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">NO</a>
-                  <a href="https://alisol.ir/?ai=learnhub_starter|PL" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">PL</a>
-                  <a href="https://alisol.ir/?ai=learnhub_starter|PT" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">PT</a>
-                  <a href="https://alisol.ir/?ai=learnhub_starter|RO" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">RO</a>
-                  <a href="https://alisol.ir/?ai=learnhub_starter|RU" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">RU</a>
-                  <a href="https://alisol.ir/?ai=learnhub_starter|HI" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">HI</a>
-                  <a href="https://alisol.ir/?ai=learnhub_starter|AR" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">AR</a>
-                  <a href="https://alisol.ir/?ai=learnhub_starter|FA" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">FA</a>
-                  <a href="https://alisol.ir/?ai=learnhub_starter|TR" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">TR</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- AI Search -->
-    <section id="ai-search">
-      <div class="container">
-        <div class="row gy-4 align-items-start">
-          <div class="col-lg-7">
-            <div class="card shadow-sm border-0 h-100">
-              <div class="card-header border-0 pb-1">
-                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
-                  <div>
-                    <h2 class="h5 mb-1">AI Search over LearnHub</h2>
-                    <p class="text-muted small mb-0">
-                      Use natural language queries to ask an AI assistant to search LearnHub resources for you.
-                    </p>
-                  </div>
-                  <span class="badge text-bg-secondary badge-pill text-xs">
-                    Optional AI helper
-                  </span>
-                </div>
-              </div>
-              <div class="card-body">
-                <p class="small text-muted">
-                  This prompt turns your AI assistant into a semantic search layer over LearnHub.
-                  It does not replace the library; it helps you discover relevant summaries faster.
-                </p>
-
-                <div class="mb-3">
-                  <label for="search-prompt" class="form-label small text-muted">Copy-paste into your AI assistant</label>
-                  <textarea
-                    id="search-prompt"
-                    class="form-control"
-                    rows="10"
-                    readonly
-                  >You are an AI search assistant for a curated learning library called "LearnHub".
-
-LearnHub contains concise, high-signal summaries of technical content (courses, YouTube videos, books, mock interviews), especially for:
-- backend engineering,
-- system design,
-- distributed systems,
-- data-intensive applications,
-- devops and SRE,
-- CS fundamentals,
-- and related topics.
-
-Your job:
-1) Help me search for relevant LearnHub resources using natural language queries.
-2) When I ask for something (e.g. "system design for senior backend interviews", "Redis patterns", "DDD aggregates", "Kubernetes fundamentals"), you will:
-   - Suggest specific LearnHub resource titles or categories that likely exist in the library,
-   - Show me how to search them by title or keywords,
-   - Optionally propose how to combine multiple resources into a learning path.
-
-Important:
-- You do not have direct access to the LearnHub index. Instead, think in terms of keywords and titles I can use in the LearnHub search box.
-- Keep your answers concise and focused on mapping my query to potential LearnHub resources.
-
-When I type a query, first restate it briefly, then suggest:
-- at least 3–7 candidate resource titles or topics to search for,
-- and how they could fit into my learning or interview prep.</textarea>
-                </div>
-
-                <div class="d-flex flex-wrap gap-2">
-                  <button
-                    id="copy-search"
-                    class="btn btn-outline-primary btn-sm"
-                    type="button"
-                  >
-                    Copy search prompt
-                  </button>
-                  <span id="copy-search-status" class="small text-muted"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-5">
-            <div class="card shadow-sm border-0 mb-4">
-              <div class="card-header border-0 pb-1">
-                <h3 class="h6 mb-1">Typical workflow</h3>
-                <p class="text-muted small mb-0">
-                  Combine AI search with the LearnHub table below.
-                </p>
-              </div>
-              <div class="card-body small text-muted">
-                <ol class="mb-3">
-                  <li>Open your AI assistant and paste the search prompt.</li>
-                  <li>Describe what you are preparing for (e.g. "senior backend interview", "Kubernetes for production").</li>
-                  <li>Ask the AI to suggest relevant LearnHub topics and exact phrases to search for.</li>
-                  <li>Use the LearnHub search box (below) to filter resources by those phrases.</li>
-                  <li>Open the summaries that match and use the in-resource prompts to go deeper.</li>
-                </ol>
-                <p class="mb-0">
-                  Once you have a set of good resources, switch back to the AI Study Plan prompt to organise them.
-                </p>
-              </div>
-            </div>
-
-            <div class="card shadow-sm border-0">
-              <div class="card-header border-0 pb-1">
-                <h3 class="h6 mb-1">Language shortcuts for AI search</h3>
-                <p class="small text-muted mb-0">
-                  Open your AI assistant preloaded with the search prompt in other languages.
-                </p>
-              </div>
-              <div class="card-body small text-muted">
-                <div class="d-flex flex-wrap gap-2 small">
-                  <a href="https://alisol.ir/?ai=learnhub_search|NL" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">NL</a>
-                  <a href="https://alisol.ir/?ai=learnhub_search|DE" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">DE</a>
-                  <a href="https://alisol.ir/?ai=learnhub_search|FR" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">FR</a>
-                  <a href="https://alisol.ir/?ai=learnhub_search|ES" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">ES</a>
-                  <a href="https://alisol.ir/?ai=learnhub_search|IT" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">IT</a>
-                  <a href="https://alisol.ir/?ai=learnhub_search|SV" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">SV</a>
-                  <a href="https://alisol.ir/?ai=learnhub_search|DA" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">DA</a>
-                  <a href="https://alisol.ir/?ai=learnhub_search|NO" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">NO</a>
-                  <a href="https://alisol.ir/?ai=learnhub_search|PL" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">PL</a>
-                  <a href="https://alisol.ir/?ai=learnhub_search|PT" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">PT</a>
-                  <a href="https://alisol.ir/?ai=learnhub_search|RO" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">RO</a>
-                  <a href="https://alisol.ir/?ai=learnhub_search|RU" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">RU</a>
-                  <a href="https://alisol.ir/?ai=learnhub_search|HI" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">HI</a>
-                  <a href="https://alisol.ir/?ai=learnhub_search|AR" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">AR</a>
-                  <a href="https://alisol.ir/?ai=learnhub_search|FA" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">FA</a>
-                  <a href="https://alisol.ir/?ai=learnhub_search|TR" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">TR</a>
-                </div>
-
-                <hr>
-
-                <p class="small mb-1">
-                  Example queries you can send to the AI:
-                </p>
-                <ul class="small text-muted mb-0">
-                  <li>
-                    “I am a mid-level backend engineer preparing for system design interviews targeting
-                    FAANG-level companies. Suggest which system design resources from LearnHub to start with.”
-                  </li>
-                  <li>
-                    “I want to strengthen my understanding of distributed systems:
-                    replication, sharding, consensus, CAP theorem. Which topics and LearnHub summaries should I search for?”
-                  </li>
-                  <li>
-                    “Recommend a path to learn Kubernetes for production workloads based on LearnHub, including practical examples in PHP.”
-                  </li>
-                  <li>
-                    “Find resources related to consistency models from
-                    Designing Data-Intensive Applications.”
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
@@ -644,6 +339,71 @@ When I type a query, first restate it briefly, then suggest:
         </div>
       </div>
     </section>
+    
+    
+    <!-- AI Study Plan -->
+    <section id="ai-study-plan">
+      <div class="container">
+        <div class="row gy-4 align-items-start">
+          <div class="col-lg-7">
+            <div class="card shadow-sm border-0 h-100">
+              <div class="card-header border-0 pb-1">
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+                  <div>
+                    <h2 class="h5 mb-1">AI Study Plan</h2>
+                    <p class="text-muted small mb-0">
+                      Use your favourite AI assistant to build a personalised study plan from LearnHub resources.
+                    </p>
+                  </div>
+                  <span class="badge text-bg-primary badge-pill text-xs">
+                    Step 1: Starter prompt
+                  </span>
+                </div>
+              </div>
+                <div class="card-body">
+                  <p class="small text-muted">
+                    Use this starter prompt in any capable AI assistant to build a personalised study plan from LearnHub resources. Replace placeholders with your details.
+                  </p>
+                  <a href="https://alisol.ir/?ai=learnhub_starter" class="btn btn-primary">Start AI Study Plan (English)</a>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="card shadow-sm border-0">
+              <div class="card-header border-0 pb-1">
+                <h3 class="h6 mb-1">Language shortcuts for AI Study Plan</h3>
+                <p class="small text-muted mb-0">
+                  Click to start in your language.
+                </p>
+              </div>
+              <div class="card-body small text-muted">
+                <div class="d-flex flex-wrap gap-2 small">
+                  <a href="https://alisol.ir/?ai=learnhub_starter|NL" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">NL</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|DE" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">DE</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|FR" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">FR</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|ES" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">ES</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|IT" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">IT</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|SV" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">SV</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|DA" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">DA</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|NO" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">NO</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|PL" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">PL</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|PT" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">PT</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|RO" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">RO</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|RU" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">RU</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|HI" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">HI</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|AR" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">AR</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|FA" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">FA</a>
+                  <a href="https://alisol.ir/?ai=learnhub_starter|TR" target="_blank" rel="noopener" class="badge text-bg-secondary text-decoration-none">TR</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
   </main>
 
   <footer class="border-top py-3">
